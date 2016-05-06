@@ -9,7 +9,7 @@ Vagrant.configure("2") do |cluster|
         machine.vm.hostname = "weave-in-docker"
 
         machine.vm.provision "shell", inline: $script
-        machine.vm.provision "docker", images: ["docker:dind"]
+        machine.vm.provision "docker", images: ["docker:1.11", "docker:1.11-dind"]
 
         machine.vm.provider "virtualbox" do |vbox|
             vbox.name = "weave in docker"
