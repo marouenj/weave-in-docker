@@ -1,1 +1,1 @@
-export DOCKER_HOST=tcp://0.0.0.0:2380
+export DOCKER_HOST=tcp://127.0.0.1:2380
