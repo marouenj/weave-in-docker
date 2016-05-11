@@ -79,12 +79,13 @@ docker run -it \
 sh -l
 
 # inside pinger
-ping -c3 pingme.weave.local
+```bash
+> ping -c3 pingme.weave.local
 64 bytes from 10.32.0.1: seq=0 ttl=64 time=0.096 ms
 64 bytes from 10.32.0.1: seq=1 ttl=64 time=0.093 ms
 64 bytes from 10.32.0.1: seq=2 ttl=64 time=0.071 ms
 ...
 
-echo "What's up?" | nc pingme.weave.local 4000
+> echo "What's up?" | nc pingme.weave.local 4000
 Hello, Weave!
 ```
