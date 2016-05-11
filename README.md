@@ -30,23 +30,23 @@ docker daemon --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --s
 
 # Package Weave in a Docker image
 ```bash
-cd /vagrant/Dockerfiles/
+> cd /vagrant/Dockerfiles/
 
-ls
+> ls
 build.sh  Dockerfile  dwnld.sh  weave
 
-./build.sh
+> ./build.sh
 
-docker images
+> docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 weave-exp           latest              ...                 ...                 ...
 ```
 
 # Run containerized Weave
 ```bash
-cd /vagrant/
+> cd /vagrant/
 
-cat run/weave_launch.sh 
+> cat run/weave_launch.sh 
 #!/bin/bash
 
 docker run \
@@ -56,24 +56,24 @@ docker run \
        -e DOCKER_HOST=tcp://127.0.0.1:2375 \
 weave-exp:latest
 
-./run/weave_launch.sh
+> ./run/weave_launch.sh
 ```
 
 # Point future docker launches to Weave proxy
 ```bash
-eval $(./run/weave_env.sh)
+> eval $(./run/weave_env.sh)
 ```
 
 # Launch a simple server
 ```bash
-docker run -d \
+> docker run -d \
        --name=pingme \
        gliderlabs/alpine \
 nc -p 4000 -ll -e echo 'Hello, Weave!'
 ```
 
 # Launch a simple client
-docker run -it \
+> docker run -it \
        --name=pinger \
        gliderlabs/alpine \
 sh -l
