@@ -73,13 +73,13 @@ nc -p 4000 -ll -e echo 'Hello, Weave!'
 ```
 
 # Launch a simple client
+```bash
 > docker run -it \
        --name=pinger \
        gliderlabs/alpine \
 sh -l
 
 # inside pinger
-```bash
 > ping -c3 pingme.weave.local
 64 bytes from 10.32.0.1: seq=0 ttl=64 time=0.096 ms
 64 bytes from 10.32.0.1: seq=1 ttl=64 time=0.093 ms
