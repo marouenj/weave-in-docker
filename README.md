@@ -13,9 +13,9 @@ end
 
 # Start a nested docker daemon
 ```bash
-cd /vagrant/
+> cd /vagrant/
 
-cat run/docker.sh 
+> cat run/docker.sh 
 #!/bin/bash
 
 docker run -d \
@@ -25,7 +25,7 @@ docker run -d \
 docker:1.11-dind \
 docker daemon --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=vfs
 
-./run/docker.sh
+> ./run/docker.sh
 ```
 
 # Package Weave in a Docker image
